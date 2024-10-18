@@ -1,16 +1,35 @@
 {
-  "name": "routing-rendering",
+  "name": "routing-and-page-rendering",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext js",
+    "test-all": "yarn check-format && yarn check-lint && yarn build"
   },
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
     "next": "14.1.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.1",
+    "@typescript-eslint/parser": "^8.0.1",
+    "eslint": "^7.23.0 || ^8.0.0",
+    "eslint-config-next": "^14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "typescript": "^5.5.4"
   }
 }
