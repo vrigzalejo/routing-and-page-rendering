@@ -1,10 +1,15 @@
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 import { DUMMY_NEWS } from '@/dummy-news';
 
 export default function NewsDetailPage({ params }) {
   const newsSlug = params.slug;
   const newsItem = DUMMY_NEWS.find((newsItem) => newsItem.slug === newsSlug);
+
+  if (!newsItem) {
+    notFound();
+  }
 
   return (
     <article className="news-article">
